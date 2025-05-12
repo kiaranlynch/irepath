@@ -147,7 +147,7 @@ footer {
   display: none;
   flex-direction: column;
   background-color: #ffffffcc;
-  border: 1px solid #aaa;
+  border: 0px solid #aaa;
   padding: 0.5rem;
   border-radius: 8px;
   margin-top: 0.5rem;
