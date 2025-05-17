@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
 html, body {
   margin: 0;
   padding: 0;
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: 'Nunito', sans-serif;
   max-width: 100%;
   overflow-x: hidden;
   background: linear-gradient(45deg, #a8e6cf, #d0f4de, #80d0c7, #a0e7e5, #b2f7ef, #c2f0fc);
@@ -80,6 +82,19 @@ h1 {
   transform: translate(-50%, -50%);
 }
 
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.card-link:hover .destination,
+.card-link:focus .destination {
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+  transform: scale(1.01);
+  transition: all 0.2s ease;
+}
+
 footer {
   text-align: center;
   padding: 2rem 0 1rem;
@@ -126,17 +141,19 @@ footer {
   font-weight: bold;
 }
 
-/* Hamburger menu styles */
 .hamburger-nav {
   position: relative;
   padding: 1rem;
   z-index: 999;
+  font-family: 'Nunito', sans-serif;
 }
 
 .menu-icon {
   font-size: 2rem;
   cursor: pointer;
   user-select: none;
+  display: inline-block;
+  padding: 10px;
 }
 
 #menu-toggle {
@@ -144,29 +161,41 @@ footer {
 }
 
 .menu {
-  display: none;
-  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
   background-color: #ffffffcc;
-  border: 0px solid #aaa;
-  padding: 0.5rem;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  border: 1px solid #aaa;
   border-radius: 8px;
-  margin-top: 0.5rem;
-  width: fit-content;
-  max-width: 90vw;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+  width: max-content;
 }
 
 #menu-toggle:checked + .menu-icon + .menu {
-  display: flex;
+  display: block;
 }
 
 .menu li {
-  list-style: none;
-  margin: 0.3rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.menu li:last-child {
+  border-bottom: none;
 }
 
 .menu li a {
+  display: block;
+  padding: 10px 20px;
   text-decoration: none;
   color: #222;
   font-weight: bold;
+}
+
+.menu li a:hover {
+  background-color: #f0f0f0;
 }
